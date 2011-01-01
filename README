@@ -1,5 +1,6 @@
 RawAttribute
 ============
+In Progress....
 
 For rails 3.0.X
 
@@ -10,5 +11,5 @@ Example
 raw_attribute :title
 
 
-Copyright (c) 2011 [Rajib Chowdhury], released under the MIT license
+Copyright (c) 2011 Rajib Chowdhury, released under the MIT license
 
