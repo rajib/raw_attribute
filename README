@@ -8,6 +8,8 @@ Example
 =======
 
 raw_attribute :title
+raw_attribute :all
+raw_attribute :except => [:title]
 
 Thanks
 ======
