@@ -24,12 +24,6 @@ class RawAttributeTest < ActiveSupport::TestCase
     assert profile.title.is_a?(ActiveSupport::SafeBuffer)
     assert profile.address.is_a?(ActiveSupport::SafeBuffer)
   end
-
-  test "return raw output" do
-    raw = RawHtml::Base.raw("<script>name</script>")
-    
-    assert raw.is_a?(ActiveSupport::SafeBuffer)
-  end
 end
 
 
