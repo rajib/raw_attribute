@@ -13,8 +13,8 @@ class ActiveRecord::Base
     attrs -= IGNORE_ATTRIBUTES
 
     attrs.each do |a|
-      define_method :"#{a}=" do |value|
-        write_attribute("#{a}", RawHtml::Base.raw(value))
+      define_method :"#{a}" do 
+        RawHtml::Base.raw(read_attribute(a))
       end
     end
   end

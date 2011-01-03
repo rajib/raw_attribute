@@ -4,21 +4,32 @@ class User < ActiveRecord::Base
   raw_attribute :title
 end
 
+class Profile < ActiveRecord::Base  
+  raw_attribute :all
+end
+
 class RawAttributeTest < ActiveSupport::TestCase
   test "html will render as raw when attribute specified" do
-    user = User.new(:title => "<script>title</script>", :address => "<script>address</script>")
+    User.create(:title => "<script>title</script>", :address => "<script>address</script>")
+    user = User.first
 
-    puts "-------------> #{user.title}"
-    puts "-------------> #{user.address}"
+    assert user.title.is_a?(ActiveSupport::SafeBuffer)
+    assert user.address.is_a?(String)
+  end
+  
+  test "html will render as raw when all attribute specified" do
+    Profile.create(:title => "<script>title</script>", :address => "<script>address</script>")
+    profile = Profile.first
 
-    assert_equal user.title.html_safe?, false
-    assert_equal user.address.html_safe?, true
+    assert profile.title.is_a?(ActiveSupport::SafeBuffer)
+    assert profile.address.is_a?(ActiveSupport::SafeBuffer)
   end
 
   test "return raw output" do
     raw = RawHtml::Base.raw("<script>name</script>")
-
-    assert_equal raw.html_safe?, false
+    
+    assert raw.is_a?(ActiveSupport::SafeBuffer)
   end
 end
+
 
