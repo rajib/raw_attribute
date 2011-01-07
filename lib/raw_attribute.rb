@@ -18,15 +18,10 @@ module RawAttribute
       attrs -= IGNORE_ATTRIBUTES
 
       attrs.each do |a|
-        if self.columns_hash[a.to_s].text?
-          class_eval <<-STR, __FILE__, __LINE__ + 1
           def #{a}
             read_attribute('#{a}'.to_sym).to_s.html_safe
           end
-          STR
-        else
-          raise RawAttributeInvalidColumnType.new("Cant use columns other than text or strings as raw, invalid column type #{a}")
-        end
+          STR     
       end
     end
 
