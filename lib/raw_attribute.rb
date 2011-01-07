@@ -18,6 +18,7 @@ module RawAttribute
       attrs -= IGNORE_ATTRIBUTES
 
       attrs.each do |a|
+
           class_eval <<-STR, __FILE__, __LINE__ + 1
           def #{a}
             read_attribute('#{a}'.to_sym).to_s.html_safe
