@@ -19,11 +19,11 @@ module RawAttribute
 
       attrs.each do |a|
 
-          class_eval <<-STR, __FILE__, __LINE__ + 1
-          def #{a}
-            read_attribute('#{a}'.to_sym).to_s.html_safe
-          end
-          STR     
+          class_eval <<-tSTRING_CONTENT, __FILE__, __LINE__ + 1
+            def #{a}
+              read_attribute('#{a}'.to_sym).to_s.html_safe
+            end
+          tSTRING_CONTENT     
       end
     end
 
