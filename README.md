@@ -1,4 +1,4 @@
-RawAttribute "!http://travis-ci.org/rajib/raw_attribute.png!":http://travis-ci.org/rajib/raw_attribute
+RawAttribute [![Build Status](http://travis-ci.org/rajib/raw_attribute.png)](http://travis-ci.org/rajib/raw_attribute)
 ============
 
 For rails 3.0.X
