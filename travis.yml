@@ -1,0 +1,8 @@
+rvm:
+  - 1.9.2
+  - ree
+gemfile:
+  - gemfiles/Gemfile.rails-3.0.3
+env:
+  - ISOLATED=true
+  - ISOLATED=false
