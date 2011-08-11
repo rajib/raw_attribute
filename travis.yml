@@ -1,8 +1,12 @@
 rvm:
   - 1.9.2
+  - rbx
+  - rbx-2.0
   - ree
+  - jruby
+  - ruby-head
 gemfile:
-  - gemfiles/Gemfile.rails-3.0.3
+  - gemfiles/Gemfile
 env:
   - ISOLATED=true
   - ISOLATED=false
